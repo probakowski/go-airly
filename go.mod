@@ -1,4 +1,4 @@
-module go-airly
+module github.com/probakowski/go-airly
 
 go 1.16
 
