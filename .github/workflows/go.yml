@@ -22,4 +22,6 @@ jobs:
       run: go build -v .
 
     - name: Test
+      env:
+        apikey: ${{secrets.apikey}}
       run: go test -v .
