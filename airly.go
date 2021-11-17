@@ -2,7 +2,6 @@ package airly
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -132,7 +131,7 @@ func (api Api) get(path string, v interface{}) error {
 	}
 
 	if res.StatusCode != 200 {
-		return errors.New(fmt.Sprintf("%d: %s", res.StatusCode, body))
+		return fmt.Errorf("%d: %s", res.StatusCode, body)
 	}
 
 	return json.Unmarshal(body, v)
