@@ -28,6 +28,6 @@ func TestInstallationIT(t *testing.T) {
 		Address:   Address{"Poland", "Krakow", "Mikołajska", "", "Krakow", "Mikołajska"},
 		Elevation: 220.38,
 		Airly:     true,
-		Sponsor:   Sponsor{489, "Chatham Financial", "sponsor sensora Airly", "https://cdn.airly.eu/logo/ChathamFinancial_1570109001008_473803190.jpg", "https://crossweb.pl/job/chatham-financial/ ", "Chatham Financial"},
+		Sponsor:   Sponsor{489, "Chatham Financial", "Sponsor sensora Airly", "https://cdn.airly.eu/logo/ChathamFinancial_1570109001008_473803190.jpg", "https://crossweb.pl/job/chatham-financial/ ", "Chatham Financial"},
 	}, installation)
 }
