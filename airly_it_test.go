@@ -16,7 +16,7 @@ func TestInstallationIT(t *testing.T) {
 		t.Skip("skipping testing in short mode")
 		return
 	}
-	api := Api{
+	api := Client{
 		Key:      apiKey,
 		Language: "pl",
 	}

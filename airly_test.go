@@ -24,7 +24,7 @@ func (m mockClient) Do(req *http.Request) (*http.Response, error) {
 
 func TestError(t *testing.T) {
 	err := errors.New("error")
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -35,7 +35,7 @@ func TestError(t *testing.T) {
 }
 
 func TestNon200Status(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -49,7 +49,7 @@ func TestNon200Status(t *testing.T) {
 }
 
 func TestInstallation(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -113,7 +113,7 @@ func TestInstallation(t *testing.T) {
 }
 
 func TestNearestInstallations(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -178,7 +178,7 @@ func TestNearestInstallations(t *testing.T) {
 }
 
 func TestNearestInstallationsOptions(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -244,7 +244,7 @@ func TestNearestInstallationsOptions(t *testing.T) {
 }
 
 func TestInstallationMeasurements(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -321,7 +321,7 @@ func TestInstallationMeasurements(t *testing.T) {
 }
 
 func TestNearestMeasurements(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
@@ -398,7 +398,7 @@ func TestNearestMeasurements(t *testing.T) {
 }
 
 func TestPointMeasurements(t *testing.T) {
-	api := Api{
+	api := Client{
 		Key:      "x1234x",
 		Language: "pl",
 		HttpClient: mockClient{func(req *http.Request) (*http.Response, error) {
