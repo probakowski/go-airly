@@ -93,7 +93,7 @@ func TestInstallation(t *testing.T) {
 			Latitude:  50.062006,
 			Longitude: 19.940984,
 		},
-		Address: Address{
+		Address: address{
 			Country:         "Poland",
 			City:            "Kraków",
 			Street:          "Mikołajska",
@@ -103,7 +103,7 @@ func TestInstallation(t *testing.T) {
 		},
 		Elevation: 220.38,
 		Airly:     true,
-		Sponsor: Sponsor{
+		Sponsor: sponsor{
 			Name:        "KrakówOddycha",
 			Description: "Sensor Airly w ramach akcji",
 			Logo:        "https://cdn.airly.org/logo/KrakówOddycha.jpg",
@@ -158,7 +158,7 @@ func TestNearestInstallations(t *testing.T) {
 			Latitude:  50.062006,
 			Longitude: 19.940984,
 		},
-		Address: Address{
+		Address: address{
 			Country:         "Poland",
 			City:            "Kraków",
 			Street:          "Mikołajska",
@@ -168,7 +168,7 @@ func TestNearestInstallations(t *testing.T) {
 		},
 		Elevation: 220.38,
 		Airly:     true,
-		Sponsor: Sponsor{
+		Sponsor: sponsor{
 			Name:        "KrakówOddycha",
 			Description: "Sensor Airly w ramach akcji",
 			Logo:        "https://cdn.airly.org/logo/KrakówOddycha.jpg",
@@ -224,7 +224,7 @@ func TestNearestInstallationsOptions(t *testing.T) {
 			Latitude:  50.062006,
 			Longitude: 19.940984,
 		},
-		Address: Address{
+		Address: address{
 			Country:         "Poland",
 			City:            "Kraków",
 			Street:          "Mikołajska",
@@ -234,7 +234,7 @@ func TestNearestInstallationsOptions(t *testing.T) {
 		},
 		Elevation: 220.38,
 		Airly:     true,
-		Sponsor: Sponsor{
+		Sponsor: sponsor{
 			Name:        "KrakówOddycha",
 			Description: "Sensor Airly w ramach akcji",
 			Logo:        "https://cdn.airly.org/logo/KrakówOddycha.jpg",
@@ -290,17 +290,17 @@ func TestInstallationMeasurements(t *testing.T) {
 	measurements, err := api.InstallationMeasurements(204)
 	assert.Nil(t, err)
 	assert.Equal(t, Measurements{
-		Current: Measurement{
+		Current: measurement{
 			FromDateTime: time.Date(2018, 8, 24, 8, 24, 48, 652*1000*1000, time.UTC),
 			TillDateTime: time.Date(2018, 8, 24, 9, 24, 48, 652*1000*1000, time.UTC),
-			Values: []Value{{
+			Values: []value{{
 				Name:  "PM1",
 				Value: 12.73,
 			}, {
 				Name:  "PM25",
 				Value: 18.7,
 			}},
-			Indexes: []Index{{
+			Indexes: []index{{
 				Name:        "AIRLY_CAQI",
 				Value:       35.53,
 				Level:       "LOW",
@@ -308,15 +308,15 @@ func TestInstallationMeasurements(t *testing.T) {
 				Advice:      "Możesz bez obaw wyjść na zewnątrz.",
 				Color:       "#D1CF1E",
 			}},
-			Standards: []Standard{{
+			Standards: []standard{{
 				Name:      "WHO",
 				Pollutant: "PM25",
 				Limit:     25,
 				Percent:   74.81,
 			}},
 		},
-		History:  []Measurement{},
-		Forecast: []Measurement{},
+		History:  []measurement{},
+		Forecast: []measurement{},
 	}, measurements)
 }
 
@@ -367,17 +367,17 @@ func TestNearestMeasurements(t *testing.T) {
 	measurements, err := api.NearestMeasurements(Location{50.062006, 19.940984}, MaxDistance(5))
 	assert.Nil(t, err)
 	assert.Equal(t, Measurements{
-		Current: Measurement{
+		Current: measurement{
 			FromDateTime: time.Date(2018, 8, 24, 8, 24, 48, 652*1000*1000, time.UTC),
 			TillDateTime: time.Date(2018, 8, 24, 9, 24, 48, 652*1000*1000, time.UTC),
-			Values: []Value{{
+			Values: []value{{
 				Name:  "PM1",
 				Value: 12.73,
 			}, {
 				Name:  "PM25",
 				Value: 18.7,
 			}},
-			Indexes: []Index{{
+			Indexes: []index{{
 				Name:        "AIRLY_CAQI",
 				Value:       35.53,
 				Level:       "LOW",
@@ -385,15 +385,15 @@ func TestNearestMeasurements(t *testing.T) {
 				Advice:      "Możesz bez obaw wyjść na zewnątrz.",
 				Color:       "#D1CF1E",
 			}},
-			Standards: []Standard{{
+			Standards: []standard{{
 				Name:      "WHO",
 				Pollutant: "PM25",
 				Limit:     25,
 				Percent:   74.81,
 			}},
 		},
-		History:  []Measurement{},
-		Forecast: []Measurement{},
+		History:  []measurement{},
+		Forecast: []measurement{},
 	}, measurements)
 }
 
@@ -444,17 +444,17 @@ func TestPointMeasurements(t *testing.T) {
 	measurements, err := api.PointMeasurements(Location{50.062006, 19.940984})
 	assert.Nil(t, err)
 	assert.Equal(t, Measurements{
-		Current: Measurement{
+		Current: measurement{
 			FromDateTime: time.Date(2018, 8, 24, 8, 24, 48, 652*1000*1000, time.UTC),
 			TillDateTime: time.Date(2018, 8, 24, 9, 24, 48, 652*1000*1000, time.UTC),
-			Values: []Value{{
+			Values: []value{{
 				Name:  "PM1",
 				Value: 12.73,
 			}, {
 				Name:  "PM25",
 				Value: 18.7,
 			}},
-			Indexes: []Index{{
+			Indexes: []index{{
 				Name:        "AIRLY_CAQI",
 				Value:       35.53,
 				Level:       "LOW",
@@ -462,14 +462,14 @@ func TestPointMeasurements(t *testing.T) {
 				Advice:      "Możesz bez obaw wyjść na zewnątrz.",
 				Color:       "#D1CF1E",
 			}},
-			Standards: []Standard{{
+			Standards: []standard{{
 				Name:      "WHO",
 				Pollutant: "PM25",
 				Limit:     25,
 				Percent:   74.81,
 			}},
 		},
-		History:  []Measurement{},
-		Forecast: []Measurement{},
+		History:  []measurement{},
+		Forecast: []measurement{},
 	}, measurements)
 }

@@ -25,9 +25,9 @@ func TestInstallationIT(t *testing.T) {
 	assert.Equal(t, Installation{
 		Id:        8077,
 		Location:  Location{50.062006, 19.940984},
-		Address:   Address{"Poland", "Krakow", "Mikołajska", "", "Krakow", "Mikołajska"},
+		Address:   address{"Poland", "Krakow", "Mikołajska", "", "Krakow", "Mikołajska"},
 		Elevation: 220.38,
 		Airly:     true,
-		Sponsor:   Sponsor{489, "Chatham Financial", "Sponsor sensora Airly", "https://cdn.airly.eu/logo/ChathamFinancial_1570109001008_473803190.jpg", "https://crossweb.pl/job/chatham-financial/ ", "Chatham Financial"},
+		Sponsor:   sponsor{489, "Chatham Financial", "sponsor sensora Airly", "https://cdn.airly.eu/logo/ChathamFinancial_1570109001008_473803190.jpg", "https://crossweb.pl/job/chatham-financial/ ", "Chatham Financial"},
 	}, installation)
 }
