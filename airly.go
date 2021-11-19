@@ -114,9 +114,9 @@ type HttpClient interface {
 
 // Client for Airly API
 type Client struct {
-	Key        string
-	Language   string
-	HttpClient HttpClient
+	Key        string     `json:"key"`
+	Language   string     `json:"language"`
+	HttpClient HttpClient `json:"-"`
 }
 
 const base = "https://airapi.airly.eu/v2/"
